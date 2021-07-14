@@ -56,8 +56,6 @@ function App() {
     <div className="App">
       {/* OUTERMOST DIV */}
 
-      <h1>Flag Generator</h1>
-
       <div className="FlagOptions">
         {/* Flag style dropdown menu */}
         <Dropdown
