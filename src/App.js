@@ -8,9 +8,9 @@ import { Flag } from "./Flag";
 
 function App() {
   // COLORS SETUP
-  const [col1, setCol1] = useState("#000000");
-  const [col2, setCol2] = useState("#ffffff");
-  const [col3, setCol3] = useState("#B9B9B9");
+  const [col1, setCol1] = useState("black");
+  const [col2, setCol2] = useState("white");
+  const [col3, setCol3] = useState("grey");
   const [showCol1Picker, setShowCol1Picker] = useState(false);
   const [showCol2Picker, setShowCol2Picker] = useState(false);
   const [showCol3Picker, setShowCol3Picker] = useState(false);
