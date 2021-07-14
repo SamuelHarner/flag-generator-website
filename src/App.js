@@ -1,7 +1,7 @@
-import './App.css';
-import React, { useState } from 'react';
-import { ChromePicker } from 'react-color';
-import { Flag } from './Flag';
+import "./App.css";
+import React, { useState } from "react";
+import { ChromePicker } from "react-color";
+import { Flag } from "./Flag";
 
 function App() {
   const [col1, setCol1] = useState("#000000");
@@ -10,7 +10,7 @@ function App() {
   const [showCol1Picker, setShowCol1Picker] = useState(false);
   const [showCol2Picker, setShowCol2Picker] = useState(false);
   const [showCol3Picker, setShowCol3Picker] = useState(false);
-  
+
   const [flagStyle, setFlagStyle] = useState("hor_tricolor");
 
   const styles = {
@@ -35,8 +35,7 @@ function App() {
       border: `1px solid black`,
       marginLeft: 5,
     },
-  }
-
+  };
 
   return (
     <div className="App">
@@ -46,54 +45,70 @@ function App() {
         {/* Color picker 1 */}
         <div className="ColorSelector">
           <button
-            onClick={() => setShowCol1Picker(showCol1Picker => !showCol1Picker)}
+            onClick={() =>
+              setShowCol1Picker((showCol1Picker) => !showCol1Picker)
+            }
           >
-            {showCol1Picker ? 'Confirm color 1' : 'Color 1: '}
+            {showCol1Picker ? "Confirm color 1" : "Color 1: "}
           </button>
           {showCol1Picker && (
             <ChromePicker
               color={col1}
-              onChange={ (col1) => {setCol1(col1.hex)} }
+              onChange={(col1) => {
+                setCol1(col1.hex);
+              }}
             />
-            )}
-          <div style={ styles.swatch1 } />
+          )}
+          <div style={styles.swatch1} />
         </div>
-        
+
         {/* Color picker 2 */}
         <div className="ColorSelector">
           <button
-            onClick={() => setShowCol2Picker(showCol2Picker => !showCol2Picker)}
+            onClick={() =>
+              setShowCol2Picker((showCol2Picker) => !showCol2Picker)
+            }
           >
-            {showCol2Picker ? 'Confirm color 2' : 'Color 2: '}
+            {showCol2Picker ? "Confirm color 2" : "Color 2: "}
           </button>
           {showCol2Picker && (
             <ChromePicker
               color={col2}
-              onChange={ (col2) => {setCol2(col2.hex)} }
+              onChange={(col2) => {
+                setCol2(col2.hex);
+              }}
             />
-            )}
-          <div style={ styles.swatch2 } />
+          )}
+          <div style={styles.swatch2} />
         </div>
 
         {/* Color picker 3 */}
         <div className="ColorSelector">
           <button
-            onClick={() => setShowCol3Picker(showCol3Picker => !showCol3Picker)}
+            onClick={() =>
+              setShowCol3Picker((showCol3Picker) => !showCol3Picker)
+            }
           >
-            {showCol3Picker ? 'Confirm color 3' : 'Color 3: '}
+            {showCol3Picker ? "Confirm color 3" : "Color 3: "}
           </button>
           {showCol3Picker && (
             <ChromePicker
               color={col3}
-              onChange={ (col3) => {setCol3(col3.hex)} }
+              onChange={(col3) => {
+                setCol3(col3.hex);
+              }}
             />
-            )}
-          <div style={ styles.swatch3 } />
+          )}
+          <div style={styles.swatch3} />
         </div>
       </div>
 
-      <Flag flagStyle={{flagStyle}} col1={{col1}} col2={{col2}} col3={{col3}} />
-      
+      <Flag
+        flagStyle={{ flagStyle }}
+        col1={{ col1 }}
+        col2={{ col2 }}
+        col3={{ col3 }}
+      />
     </div>
   );
 }
