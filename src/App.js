@@ -7,6 +7,7 @@ import "react-dropdown/style.css";
 import { Flag } from "./Flag";
 
 function App() {
+  // COLORS SETUP
   const [col1, setCol1] = useState("#000000");
   const [col2, setCol2] = useState("#ffffff");
   const [col3, setCol3] = useState("#B9B9B9");
@@ -14,13 +15,16 @@ function App() {
   const [showCol2Picker, setShowCol2Picker] = useState(false);
   const [showCol3Picker, setShowCol3Picker] = useState(false);
 
-  const defaultFlagStyle = "hor_tricolor";
-  const [flagStyle, setFlagStyle] = useState(defaultFlagStyle);
-
+  // FLAG STYLES SETUP
   const flagStyles = [
     { value: "hor_tricolor", label: "Horizontal tricolor" },
     { value: "ver_tricolor", label: "Vertical tricolor" },
   ];
+
+  const defaultFlagStyle = "hor_tricolor";
+  const [flagStyle, setFlagStyle] = useState(defaultFlagStyle);
+
+  const changeFlagStyle = (option) => setFlagStyle(option.value);
 
   const styles = {
     swatch1: {
@@ -60,8 +64,8 @@ function App() {
         {/* Flag style dropdown menu */}
         <Dropdown
           options={flagStyles}
-          onChange={setFlagStyle}
           value={defaultFlagStyle}
+          onChange={changeFlagStyle}
           placeholder="Select a flag style"
         />
 
