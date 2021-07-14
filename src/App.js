@@ -1,34 +1,37 @@
 import './App.css';
 import React, { useState } from 'react';
 import { ChromePicker } from 'react-color';
+import { Flag } from './Flag';
 
 function App() {
-  const [color1, setColor1] = useState("#000000");
-  const [color2, setColor2] = useState("#ffffff");
-  const [color3, setColor3] = useState("#B9B9B9");
+  const [col1, setCol1] = useState("#000000");
+  const [col2, setCol2] = useState("#ffffff");
+  const [col3, setCol3] = useState("#B9B9B9");
   const [showCol1Picker, setShowCol1Picker] = useState(false);
   const [showCol2Picker, setShowCol2Picker] = useState(false);
   const [showCol3Picker, setShowCol3Picker] = useState(false);
+  
+  const [flagStyle, setFlagStyle] = useState("hor_tricolor");
 
   const styles = {
     swatch1: {
       width: 20,
       height: 20,
-      background: color1,
+      background: col1,
       border: `1px solid black`,
       marginLeft: 5,
     },
     swatch2: {
       width: 20,
       height: 20,
-      background: color2,
+      background: col2,
       border: `1px solid black`,
       marginLeft: 5,
     },
     swatch3: {
       width: 20,
       height: 20,
-      background: color3,
+      background: col3,
       border: `1px solid black`,
       marginLeft: 5,
     },
@@ -39,7 +42,7 @@ function App() {
     <div className="App">
       <h1>Flag Generator</h1>
 
-      <div className="ColorPickers">
+      <div className="FlagOptions">
         {/* Color picker 1 */}
         <div className="ColorSelector">
           <button
@@ -49,8 +52,8 @@ function App() {
           </button>
           {showCol1Picker && (
             <ChromePicker
-              color={color1}
-              onChange={ (color1) => {setColor1(color1.hex)} }
+              color={col1}
+              onChange={ (col1) => {setCol1(col1.hex)} }
             />
             )}
           <div style={ styles.swatch1 } />
@@ -65,8 +68,8 @@ function App() {
           </button>
           {showCol2Picker && (
             <ChromePicker
-              color={color2}
-              onChange={ (color2) => {setColor2(color2.hex)} }
+              color={col2}
+              onChange={ (col2) => {setCol2(col2.hex)} }
             />
             )}
           <div style={ styles.swatch2 } />
@@ -81,13 +84,15 @@ function App() {
           </button>
           {showCol3Picker && (
             <ChromePicker
-              color={color3}
-              onChange={ (color3) => {setColor3(color3.hex)} }
+              color={col3}
+              onChange={ (col3) => {setCol3(col3.hex)} }
             />
             )}
           <div style={ styles.swatch3 } />
         </div>
       </div>
+
+      <Flag flagStyle={{flagStyle}} col1={{col1}} col2={{col2}} col3={{col3}} />
       
     </div>
   );
