@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import { ChromePicker } from "react-color";
+import { Stage, Layer, Rect } from "react-konva";
 import { Flag } from "./Flag";
 
 function App() {
@@ -35,10 +36,16 @@ function App() {
       border: `1px solid black`,
       marginLeft: 5,
     },
+
+    flag: {
+      border: `1px solid black`,
+    },
   };
 
   return (
     <div className="App">
+      {/* OUTERMOST DIV */}
+
       <h1>Flag Generator</h1>
 
       <div className="FlagOptions">
@@ -103,12 +110,24 @@ function App() {
         </div>
       </div>
 
-      <Flag
-        flagStyle={{ flagStyle }}
-        col1={{ col1 }}
-        col2={{ col2 }}
-        col3={{ col3 }}
-      />
+      {/* FLAG */}
+      <div>
+        <Stage width={window.innerWidth} height={window.innerHeight}>
+          <Layer style={styles.flag}>
+            <Flag flagStyle={flagStyle} col1={col1} col2={col2} col3={col3} />
+          </Layer>
+        </Stage>
+      </div>
+
+      {/* TEST */}
+      {/* <div>
+        <Stage width={window.innerWidth} height={window.innerHeight}>
+          <Layer>
+            <Rect x={500} y={100} width={100} height={100} fill={col1} />
+          </Layer>
+        </Stage>
+      </div> */}
+      {/* OUTERMOST DIV */}
     </div>
   );
 }
