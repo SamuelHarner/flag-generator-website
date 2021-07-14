@@ -26,6 +26,7 @@ function App() {
 
   const changeFlagStyle = (option) => setFlagStyle(option.value);
 
+  // LOCAL CSS STYLES
   const styles = {
     swatch1: {
       width: 35,
@@ -48,12 +49,9 @@ function App() {
       border: `1px solid black`,
       marginLeft: 5,
     },
-
-    flag: {
-      border: `1px solid black`,
-    },
   };
 
+  // APP RETURN
   return (
     <div className="App">
       {/* OUTERMOST DIV */}
