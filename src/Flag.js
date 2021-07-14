@@ -1,13 +1,14 @@
-import { Rect } from "react-konva";
-
 /* Functions for creating flags */
+import { Rect } from "react-konva";
 
 export function Flag({ flagStyle, col1, col2, col3 }) {
   // Default aspect ratio
   const WIDTH = 1920 / 2;
   const HEIGHT = 1080 / 2;
+
+  // Default start coordinates
   const START_X = 250;
-  const START_Y = 50;
+  const START_Y = 30;
   if (flagStyle === "hor_tricolor") {
     return (
       <>

@@ -1,7 +1,9 @@
 import "./App.css";
 import React, { useState } from "react";
 import { ChromePicker } from "react-color";
-import { Stage, Layer, Rect } from "react-konva";
+import { Stage, Layer } from "react-konva";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
 import { Flag } from "./Flag";
 
 function App() {
@@ -12,26 +14,32 @@ function App() {
   const [showCol2Picker, setShowCol2Picker] = useState(false);
   const [showCol3Picker, setShowCol3Picker] = useState(false);
 
-  const [flagStyle, setFlagStyle] = useState("hor_tricolor");
+  const defaultFlagStyle = "hor_tricolor";
+  const [flagStyle, setFlagStyle] = useState(defaultFlagStyle);
+
+  const flagStyles = [
+    { value: "hor_tricolor", label: "Horizontal tricolor" },
+    { value: "ver_tricolor", label: "Vertical tricolor" },
+  ];
 
   const styles = {
     swatch1: {
-      width: 20,
-      height: 20,
+      width: 35,
+      height: 35,
       background: col1,
       border: `1px solid black`,
       marginLeft: 5,
     },
     swatch2: {
-      width: 20,
-      height: 20,
+      width: 35,
+      height: 35,
       background: col2,
       border: `1px solid black`,
       marginLeft: 5,
     },
     swatch3: {
-      width: 20,
-      height: 20,
+      width: 35,
+      height: 35,
       background: col3,
       border: `1px solid black`,
       marginLeft: 5,
@@ -49,6 +57,14 @@ function App() {
       <h1>Flag Generator</h1>
 
       <div className="FlagOptions">
+        {/* Flag style dropdown menu */}
+        <Dropdown
+          options={flagStyles}
+          onChange={setFlagStyle}
+          value={defaultFlagStyle}
+          placeholder="Select a flag style"
+        />
+
         {/* Color picker 1 */}
         <div className="ColorSelector">
           <button
@@ -127,6 +143,7 @@ function App() {
           </Layer>
         </Stage>
       </div> */}
+
       {/* OUTERMOST DIV */}
     </div>
   );
