@@ -1,6 +1,6 @@
 import "./App.css";
 import { FLAG } from "./constants";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ChromePicker } from "react-color";
 import { Stage, Layer, Rect } from "react-konva";
 import Dropdown from "react-dropdown";
@@ -52,6 +52,14 @@ function App() {
     },
   };
 
+  // DOWNLOAD BUTTON EXPORT SETUP
+  const layerRef = useRef(null);
+
+  const handleExport = () => {
+    const uri = layerRef.current.toDataURL();
+    downloadURI(uri, "flag.png");
+  };
+
   // APP RETURN
   return (
     <div className="App">
@@ -73,7 +81,7 @@ function App() {
               setShowCol1Picker((showCol1Picker) => !showCol1Picker)
             }
           >
-            {showCol1Picker ? "Confirm color 1" : "Color 1: "}
+            {showCol1Picker ? "Close color 1" : "Color 1: "}
           </button>
           {showCol1Picker && (
             <ChromePicker
@@ -93,7 +101,7 @@ function App() {
               setShowCol2Picker((showCol2Picker) => !showCol2Picker)
             }
           >
-            {showCol2Picker ? "Confirm color 2" : "Color 2: "}
+            {showCol2Picker ? "Close color 2" : "Color 2: "}
           </button>
           {showCol2Picker && (
             <ChromePicker
@@ -113,7 +121,7 @@ function App() {
               setShowCol3Picker((showCol3Picker) => !showCol3Picker)
             }
           >
-            {showCol3Picker ? "Confirm color 3" : "Color 3: "}
+            {showCol3Picker ? "Close color 3" : "Color 3: "}
           </button>
           {showCol3Picker && (
             <ChromePicker
@@ -127,13 +135,15 @@ function App() {
         </div>
 
         {/* Download flag button */}
-        <button className="DlFlagButton">Download flag</button>
+        <button className="DlFlagButton" onClick={handleExport}>
+          Download flag
+        </button>
       </div>
 
       {/* FLAG */}
       <div>
         <Stage width={window.innerWidth} height={window.innerHeight}>
-          <Layer style={styles.flag}>
+          <Layer>
             <Rect
               x={FLAG.START_X - 1}
               y={FLAG.START_Y - 1}
@@ -141,23 +151,25 @@ function App() {
               height={FLAG.HEIGHT + 2}
               fill="black"
             />
+          </Layer>
+          <Layer ref={layerRef}>
             <Flag flagStyle={flagStyle} col1={col1} col2={col2} col3={col3} />
           </Layer>
         </Stage>
       </div>
-
-      {/* TEST */}
-      {/* <div>
-        <Stage width={window.innerWidth} height={window.innerHeight}>
-          <Layer>
-            <Rect x={500} y={100} width={100} height={100} fill={col1} />
-          </Layer>
-        </Stage>
-      </div> */}
-
       {/* OUTERMOST DIV */}
     </div>
   );
+}
+
+// function from https://stackoverflow.com/a/15832662/512042
+function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 export default App;
