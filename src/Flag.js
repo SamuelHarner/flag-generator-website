@@ -58,6 +58,59 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "hor_dicolor":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 2}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 2}
+            height={FLAG.HEIGHT}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "ver_dicolor":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 2}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 2}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "monocolor":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+        </>
+      );
+
     default:
       return null;
   }

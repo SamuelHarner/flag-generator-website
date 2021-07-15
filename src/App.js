@@ -20,6 +20,9 @@ function App() {
   const flagStyles = [
     { value: "hor_tricolor", label: "Horizontal tricolor" },
     { value: "ver_tricolor", label: "Vertical tricolor" },
+    { value: "hor_dicolor", label: "Horizontal dicolor" },
+    { value: "ver_dicolor", label: "Vertical dicolor" },
+    { value: "monocolor", label: "Monocolor" },
   ];
 
   const defaultFlagStyle = "hor_tricolor";
