@@ -1,7 +1,8 @@
 import "./App.css";
+import { FLAG } from "./constants";
 import React, { useState } from "react";
 import { ChromePicker } from "react-color";
-import { Stage, Layer } from "react-konva";
+import { Stage, Layer, Rect } from "react-konva";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import { Flag } from "./Flag";
@@ -124,12 +125,22 @@ function App() {
           )}
           <div style={styles.swatch3} />
         </div>
+
+        {/* Download flag button */}
+        <button className="DlFlagButton">Download flag</button>
       </div>
 
       {/* FLAG */}
       <div>
         <Stage width={window.innerWidth} height={window.innerHeight}>
           <Layer style={styles.flag}>
+            <Rect
+              x={FLAG.START_X - 1}
+              y={FLAG.START_Y - 1}
+              width={FLAG.WIDTH + 2}
+              height={FLAG.HEIGHT + 2}
+              fill="black"
+            />
             <Flag flagStyle={flagStyle} col1={col1} col2={col2} col3={col3} />
           </Layer>
         </Stage>

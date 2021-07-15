@@ -1,43 +1,30 @@
 /* Functions for creating flags */
+import { FLAG } from "./constants";
 import { Rect } from "react-konva";
 
 export function Flag({ flagStyle, col1, col2, col3 }) {
-  // Default aspect ratio
-  const WIDTH = 1920 / 2;
-  const HEIGHT = 1080 / 2;
-
-  // Default start coordinates
-  const START_X = 250;
-  const START_Y = 30;
   if (flagStyle === "hor_tricolor") {
     return (
       <>
         <Rect
-          x={START_X - 1}
-          y={START_Y - 1}
-          width={WIDTH + 2}
-          height={HEIGHT + 2}
-          fill="black"
-        />
-        <Rect
-          x={START_X}
-          y={START_Y}
-          width={WIDTH / 3}
-          height={HEIGHT}
+          x={FLAG.START_X}
+          y={FLAG.START_Y}
+          width={FLAG.WIDTH / 3}
+          height={FLAG.HEIGHT}
           fill={col1}
         />
         <Rect
-          x={START_X + WIDTH / 3}
-          y={START_Y}
-          width={WIDTH / 3}
-          height={HEIGHT}
+          x={FLAG.START_X + FLAG.WIDTH / 3}
+          y={FLAG.START_Y}
+          width={FLAG.WIDTH / 3}
+          height={FLAG.HEIGHT}
           fill={col2}
         />
         <Rect
-          x={START_X + (2 * WIDTH) / 3}
-          y={START_Y}
-          width={WIDTH / 3}
-          height={HEIGHT}
+          x={FLAG.START_X + (2 * FLAG.WIDTH) / 3}
+          y={FLAG.START_Y}
+          width={FLAG.WIDTH / 3}
+          height={FLAG.HEIGHT}
           fill={col3}
         />
       </>
@@ -46,31 +33,24 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
     return (
       <>
         <Rect
-          x={START_X - 1}
-          y={START_Y - 1}
-          width={WIDTH + 2}
-          height={HEIGHT + 2}
-          fill="black"
-        />
-        <Rect
-          x={START_X}
-          y={START_Y}
-          width={WIDTH}
-          height={HEIGHT / 3}
+          x={FLAG.START_X}
+          y={FLAG.START_Y}
+          width={FLAG.WIDTH}
+          height={FLAG.HEIGHT / 3}
           fill={col1}
         />
         <Rect
-          x={START_X}
-          y={START_Y + HEIGHT / 3}
-          width={WIDTH}
-          height={HEIGHT / 3}
+          x={FLAG.START_X}
+          y={FLAG.START_Y + FLAG.HEIGHT / 3}
+          width={FLAG.WIDTH}
+          height={FLAG.HEIGHT / 3}
           fill={col2}
         />
         <Rect
-          x={START_X}
-          y={START_Y + (2 * HEIGHT) / 3}
-          width={WIDTH}
-          height={HEIGHT / 3}
+          x={FLAG.START_X}
+          y={FLAG.START_Y + (2 * FLAG.HEIGHT) / 3}
+          width={FLAG.WIDTH}
+          height={FLAG.HEIGHT / 3}
           fill={col3}
         />
       </>
