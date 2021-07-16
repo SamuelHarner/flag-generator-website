@@ -132,7 +132,7 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
-    case "saltire_dicolor":
+    case "saltire_bicolor":
       return (
         <>
           <Rect
@@ -260,7 +260,7 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
-    case "hor_dicolor":
+    case "hor_bicolor":
       return (
         <>
           <Rect
@@ -280,7 +280,7 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
-    case "ver_dicolor":
+    case "ver_bicolor":
       return (
         <>
           <Rect

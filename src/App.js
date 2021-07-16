@@ -22,10 +22,10 @@ function App() {
     { value: "ver_tricolor", label: "Vertical tricolor" },
     { value: "nordic_cross", label: "Nordic cross" },
     { value: "scandinavian_cross", label: "Scandinavian cross" },
-    { value: "saltire_dicolor", label: "Saltire dicolor" },
+    { value: "saltire_bicolor", label: "Saltire bicolor" },
     { value: "saltire_tricolor", label: "Saltire tricolor" },
-    { value: "hor_dicolor", label: "Horizontal dicolor" },
-    { value: "ver_dicolor", label: "Vertical dicolor" },
+    { value: "hor_bicolor", label: "Horizontal bicolor" },
+    { value: "ver_bicolor", label: "Vertical bicolor" },
     { value: "czech", label: "Czech" },
     { value: "japan", label: "Japan" },
   ];
