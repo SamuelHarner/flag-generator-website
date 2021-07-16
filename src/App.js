@@ -24,6 +24,7 @@ function App() {
     { value: "scandinavian_cross", label: "Scandinavian cross" },
     { value: "saltire_bicolor", label: "Saltire bicolor" },
     { value: "saltire_tricolor", label: "Saltire tricolor" },
+    { value: "tribar", label: "Tribar" },
     { value: "ver_bicolor", label: "Vertical bicolor" },
     { value: "hor_bicolor", label: "Horizontal bicolor" },
     { value: "czech", label: "Czech" },

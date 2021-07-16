@@ -260,6 +260,33 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "tribar":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 3}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 3}
+            y={FLAG.START_Y}
+            width={(2 * FLAG.WIDTH) / 3}
+            height={FLAG.HEIGHT / 2}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 3}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            width={(2 * FLAG.WIDTH) / 3}
+            height={FLAG.HEIGHT / 2}
+            fill={col3}
+          />
+        </>
+      );
+
     case "hor_bicolor":
       return (
         <>
