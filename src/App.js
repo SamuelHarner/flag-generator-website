@@ -31,8 +31,11 @@ function App() {
     { value: "texas", label: "Texas" },
     { value: "chile", label: "Chile" },
     { value: "centered_circle", label: "Centered circle" },
+    { value: "circle_ver_tricolor", label: "Circle vertical tricolor" },
+    { value: "circle_hor_tricolor", label: "Circle horizontal tricolor" },
     { value: "centered_star", label: "Centered star" },
     { value: "centered_hollow_star", label: "Centered hollow star" },
+    { value: "cornered_star", label: "Cornered star" },
     { value: "monocolor", label: "Monocolor" },
   ];
 

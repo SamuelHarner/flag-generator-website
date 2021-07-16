@@ -449,6 +449,58 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "circle_hor_tricolor":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 2}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 2}
+            fill={col3}
+          />
+          <Circle
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            radius={FLAG.WIDTH / 6}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "circle_ver_tricolor":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 2}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 2}
+            height={FLAG.HEIGHT}
+            fill={col3}
+          />
+          <Circle
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            radius={FLAG.WIDTH / 6}
+            fill={col2}
+          />
+        </>
+      );
+
     case "centered_star":
       return (
         <>
@@ -495,6 +547,27 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
             innerRadius={FLAG.WIDTH / 20}
             outerRadius={(2.618 * FLAG.WIDTH) / 20}
             fill={col3}
+          />
+        </>
+      );
+
+    case "cornered_star":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Star
+            x={FLAG.START_X + FLAG.WIDTH / 6}
+            y={FLAG.START_Y + FLAG.HEIGHT / 4}
+            numPoints={5}
+            innerRadius={FLAG.WIDTH / 30}
+            outerRadius={(2.618 * FLAG.WIDTH) / 30}
+            fill={col2}
           />
         </>
       );
