@@ -32,6 +32,7 @@ function App() {
     { value: "chile", label: "Chile" },
     { value: "centered_circle", label: "Centered circle" },
     { value: "centered_star", label: "Centered star" },
+    { value: "centered_hollow_star", label: "Centered hollow star" },
     { value: "monocolor", label: "Monocolor" },
   ];
 

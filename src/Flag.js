@@ -470,6 +470,35 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "centered_hollow_star":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Star
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            numPoints={5}
+            innerRadius={FLAG.WIDTH / 15}
+            outerRadius={(2.618 * FLAG.WIDTH) / 15}
+            fill={col2}
+          />
+          <Star
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            numPoints={5}
+            innerRadius={FLAG.WIDTH / 20}
+            outerRadius={(2.618 * FLAG.WIDTH) / 20}
+            fill={col3}
+          />
+        </>
+      );
+
     case "monocolor":
       return (
         <>
