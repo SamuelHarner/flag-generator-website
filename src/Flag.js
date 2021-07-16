@@ -402,7 +402,7 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
             x={FLAG.START_X}
             y={FLAG.START_Y}
             width={FLAG.WIDTH / 3}
-            height={FLAG.HEIGHT / 3}
+            height={FLAG.HEIGHT / 2}
             fill={col1}
           />
           <Rect
