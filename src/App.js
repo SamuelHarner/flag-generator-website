@@ -31,7 +31,7 @@ function App() {
     { value: "monocolor", label: "Monocolor" },
   ];
 
-  const defaultFlagStyle = "hor_tricolor";
+  const defaultFlagStyle = "ver_tricolor";
   const [flagStyle, setFlagStyle] = useState(defaultFlagStyle);
 
   const changeFlagStyle = (option) => setFlagStyle(option.value);
