@@ -449,6 +449,31 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "centered_hollow_circle":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Circle
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            radius={FLAG.WIDTH / 6}
+            fill={col2}
+          />
+          <Circle
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            radius={FLAG.WIDTH / 8}
+            fill={col3}
+          />
+        </>
+      );
+
     case "circle_hor_tricolor":
       return (
         <>
