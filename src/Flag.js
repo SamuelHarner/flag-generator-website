@@ -1,6 +1,6 @@
 /* Functions for creating flags */
 import { FLAG } from "./constants";
-import { Circle, Rect, Line } from "react-konva";
+import { Circle, Rect, Line, Star } from "react-konva";
 
 export function Flag({ flagStyle, col1, col2, col3 }) {
   switch (flagStyle) {
@@ -360,7 +360,7 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
-    case "japan":
+    case "centered_circle":
       return (
         <>
           <Rect
@@ -374,6 +374,27 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
             x={FLAG.START_X + FLAG.WIDTH / 2}
             y={FLAG.START_Y + FLAG.HEIGHT / 2}
             radius={FLAG.WIDTH / 6}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "centered_star":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Star
+            x={FLAG.START_X + FLAG.WIDTH / 2}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            numPoints={5}
+            innerRadius={FLAG.WIDTH / 20}
+            outerRadius={(2.618 * FLAG.WIDTH) / 20}
             fill={col2}
           />
         </>
