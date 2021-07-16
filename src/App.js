@@ -28,6 +28,8 @@ function App() {
     { value: "ver_bicolor", label: "Vertical bicolor" },
     { value: "hor_bicolor", label: "Horizontal bicolor" },
     { value: "czech", label: "Czech" },
+    { value: "texas", label: "Texas" },
+    { value: "chile", label: "Chile" },
     { value: "centered_circle", label: "Centered circle" },
     { value: "centered_star", label: "Centered star" },
     { value: "monocolor", label: "Monocolor" },

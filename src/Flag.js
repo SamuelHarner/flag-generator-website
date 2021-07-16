@@ -360,6 +360,76 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "texas":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 3}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 3}
+            y={FLAG.START_Y}
+            width={(2 * FLAG.WIDTH) / 3}
+            height={FLAG.HEIGHT / 2}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 3}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            width={(2 * FLAG.WIDTH) / 3}
+            height={FLAG.HEIGHT / 2}
+            fill={col3}
+          />
+          <Star
+            x={FLAG.START_X + FLAG.WIDTH / 6}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            numPoints={5}
+            innerRadius={FLAG.WIDTH / 20}
+            outerRadius={(2.618 * FLAG.WIDTH) / 20}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "chile":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 3}
+            height={FLAG.HEIGHT / 3}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 3}
+            y={FLAG.START_Y}
+            width={(2 * FLAG.WIDTH) / 3}
+            height={FLAG.HEIGHT / 2}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + FLAG.HEIGHT / 2}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 2}
+            fill={col3}
+          />
+          <Star
+            x={FLAG.START_X + FLAG.WIDTH / 6}
+            y={FLAG.START_Y + FLAG.HEIGHT / 4}
+            numPoints={5}
+            innerRadius={FLAG.WIDTH / 30}
+            outerRadius={(2.618 * FLAG.WIDTH) / 30}
+            fill={col2}
+          />
+        </>
+      );
+
     case "centered_circle":
       return (
         <>
