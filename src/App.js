@@ -18,16 +18,17 @@ function App() {
 
   // FLAG STYLES SETUP
   const flagStyles = [
-    { value: "hor_tricolor", label: "Horizontal tricolor" },
     { value: "ver_tricolor", label: "Vertical tricolor" },
+    { value: "hor_tricolor", label: "Horizontal tricolor" },
     { value: "nordic_cross", label: "Nordic cross" },
     { value: "scandinavian_cross", label: "Scandinavian cross" },
     { value: "saltire_bicolor", label: "Saltire bicolor" },
     { value: "saltire_tricolor", label: "Saltire tricolor" },
-    { value: "hor_bicolor", label: "Horizontal bicolor" },
     { value: "ver_bicolor", label: "Vertical bicolor" },
+    { value: "hor_bicolor", label: "Horizontal bicolor" },
     { value: "czech", label: "Czech" },
     { value: "japan", label: "Japan" },
+    { value: "monocolor", label: "Monocolor" },
   ];
 
   const defaultFlagStyle = "hor_tricolor";

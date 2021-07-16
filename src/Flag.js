@@ -4,7 +4,7 @@ import { Circle, Rect, Line } from "react-konva";
 
 export function Flag({ flagStyle, col1, col2, col3 }) {
   switch (flagStyle) {
-    case "hor_tricolor":
+    case "ver_tricolor":
       return (
         <>
           <Rect
@@ -31,7 +31,7 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
-    case "ver_tricolor":
+    case "hor_tricolor":
       return (
         <>
           <Rect
@@ -260,7 +260,7 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
-    case "hor_bicolor":
+    case "ver_bicolor":
       return (
         <>
           <Rect
@@ -280,7 +280,7 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
-    case "ver_bicolor":
+    case "hor_bicolor":
       return (
         <>
           <Rect
