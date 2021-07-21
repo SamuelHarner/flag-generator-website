@@ -327,6 +327,66 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "down_diag_bicolor":
+      return (
+        <>
+          <Line
+            points={[
+              FLAG.START_X,
+              FLAG.START_Y,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y + FLAG.HEIGHT,
+              FLAG.START_X,
+              FLAG.START_Y + FLAG.HEIGHT,
+            ]}
+            closed
+            fill={col1}
+          />
+          <Line
+            points={[
+              FLAG.START_X,
+              FLAG.START_Y,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y + FLAG.HEIGHT,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y,
+            ]}
+            closed
+            fill={col2}
+          />
+        </>
+      );
+
+    case "up_diag_bicolor":
+      return (
+        <>
+          <Line
+            points={[
+              FLAG.START_X,
+              FLAG.START_Y + FLAG.HEIGHT,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y,
+              FLAG.START_X,
+              FLAG.START_Y,
+            ]}
+            closed
+            fill={col1}
+          />
+          <Line
+            points={[
+              FLAG.START_X,
+              FLAG.START_Y + FLAG.HEIGHT,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y + FLAG.HEIGHT,
+            ]}
+            closed
+            fill={col2}
+          />
+        </>
+      );
+
     case "czech":
       return (
         <>

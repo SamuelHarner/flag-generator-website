@@ -27,6 +27,8 @@ function App() {
     { value: "tribar", label: "Tribar" },
     { value: "ver_bicolor", label: "Vertical bicolor" },
     { value: "hor_bicolor", label: "Horizontal bicolor" },
+    { value: "down_diag_bicolor", label: "Down diagonal bicolor" },
+    { value: "up_diag_bicolor", label: "Up diagonal bicolor" },
     { value: "czech", label: "Czech" },
     { value: "texas", label: "Texas" },
     { value: "chile", label: "Chile" },
