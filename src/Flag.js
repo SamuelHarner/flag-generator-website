@@ -750,6 +750,35 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "swiss":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          {/* Vertical */}
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 2 - FLAG.HEIGHT / 10}
+            y={FLAG.START_Y + FLAG.HEIGHT / 5}
+            width={FLAG.HEIGHT / 5}
+            height={(3 * FLAG.HEIGHT) / 5}
+            fill={col2}
+          />
+          {/* Horizontal */}
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 2 - (1.5 * FLAG.HEIGHT) / 5}
+            y={FLAG.START_Y + (2 * FLAG.HEIGHT) / 5}
+            width={(3 * FLAG.HEIGHT) / 5}
+            height={FLAG.HEIGHT / 5}
+            fill={col2}
+          />
+        </>
+      );
+
     case "centered_circle":
       return (
         <>

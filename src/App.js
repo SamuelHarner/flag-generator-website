@@ -41,6 +41,7 @@ function App() {
     { value: "czech", label: "Czech" },
     { value: "texas", label: "Texas" },
     { value: "chile", label: "Chile" },
+    { value: "swiss", label: "Swiss" },
     { value: "centered_circle", label: "Centered circle" },
     { value: "centered_hollow_circle", label: "Centered hollow circle" },
     { value: "circle_ver_tricolor", label: "Circle vertical tricolor" },
