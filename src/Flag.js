@@ -387,6 +387,70 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "down_diag_stripe":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          {/* Stripe */}
+          <Line
+            points={[
+              FLAG.START_X,
+              FLAG.START_Y + FLAG.HEIGHT / 10,
+              FLAG.START_X,
+              FLAG.START_Y,
+              FLAG.START_X + FLAG.HEIGHT / 10,
+              FLAG.START_Y,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y + FLAG.HEIGHT - FLAG.HEIGHT / 10,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y + FLAG.HEIGHT,
+              FLAG.START_X + FLAG.WIDTH - FLAG.HEIGHT / 10,
+              FLAG.START_Y + FLAG.HEIGHT,
+            ]}
+            closed
+            fill={col2}
+          />
+        </>
+      );
+
+    case "up_diag_stripe":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          {/* Stripe */}
+          <Line
+            points={[
+              FLAG.START_X + FLAG.HEIGHT / 10,
+              FLAG.START_Y + FLAG.HEIGHT,
+              FLAG.START_X,
+              FLAG.START_Y + FLAG.HEIGHT,
+              FLAG.START_X,
+              FLAG.START_Y + FLAG.HEIGHT - FLAG.HEIGHT / 10,
+              FLAG.START_X + FLAG.WIDTH - FLAG.HEIGHT / 10,
+              FLAG.START_Y,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y,
+              FLAG.START_X + FLAG.WIDTH,
+              FLAG.START_Y + FLAG.HEIGHT / 10,
+            ]}
+            closed
+            fill={col2}
+          />
+        </>
+      );
+
     case "czech":
       return (
         <>

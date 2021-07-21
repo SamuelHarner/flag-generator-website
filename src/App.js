@@ -29,6 +29,8 @@ function App() {
     { value: "hor_bicolor", label: "Horizontal bicolor" },
     { value: "down_diag_bicolor", label: "Down diagonal bicolor" },
     { value: "up_diag_bicolor", label: "Up diagonal bicolor" },
+    { value: "down_diag_stripe", label: "Down diagonal stripe" },
+    { value: "up_diag_stripe", label: "Up diagonal stripe" },
     { value: "czech", label: "Czech" },
     { value: "texas", label: "Texas" },
     { value: "chile", label: "Chile" },
