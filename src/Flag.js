@@ -451,6 +451,202 @@ export function Flag({ flagStyle, col1, col2, col3 }) {
         </>
       );
 
+    case "ver_3_stripe":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X + FLAG.WIDTH / 7}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 7}
+            height={FLAG.HEIGHT}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X + (3 * FLAG.WIDTH) / 7}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 7}
+            height={FLAG.HEIGHT}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X + (5 * FLAG.WIDTH) / 7}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 7}
+            height={FLAG.HEIGHT}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "ver_2_stripe":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X + (2 * FLAG.WIDTH) / 7}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 7}
+            height={FLAG.HEIGHT}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X + (4 * FLAG.WIDTH) / 7}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 7}
+            height={FLAG.HEIGHT}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "ver_1_stripe":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X + (3 * FLAG.WIDTH) / 7}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH / 7}
+            height={FLAG.HEIGHT}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "hor_3_stripe":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + FLAG.HEIGHT / 7}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 7}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + (3 * FLAG.HEIGHT) / 7}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 7}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + (5 * FLAG.HEIGHT) / 7}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 7}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "hor_2_stripe":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + (2 * FLAG.HEIGHT) / 7}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 7}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + (4 * FLAG.HEIGHT) / 7}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 7}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "hor_1_stripe":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + (3 * FLAG.HEIGHT) / 7}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 7}
+            fill={col2}
+          />
+        </>
+      );
+
+    case "thai":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT}
+            fill={col1}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + FLAG.HEIGHT / 6}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 6}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + (2 * FLAG.HEIGHT) / 6}
+            width={FLAG.WIDTH}
+            height={(2 * FLAG.HEIGHT) / 6}
+            fill={col3}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + (4 * FLAG.HEIGHT) / 6}
+            width={FLAG.WIDTH}
+            height={FLAG.HEIGHT / 6}
+            fill={col2}
+          />
+        </>
+      );
+
     case "czech":
       return (
         <>
