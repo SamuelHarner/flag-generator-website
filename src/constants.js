@@ -4,6 +4,6 @@ export const FLAG = {
   HEIGHT: 1080 / 2,
 
   // Default flag start coordinates
-  START_X: 250,
+  START_X: 230,
   START_Y: 30,
 };
