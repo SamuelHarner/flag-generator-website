@@ -12,9 +12,9 @@ function App() {
   const [col1, setCol1] = useState("black");
   const [col2, setCol2] = useState("white");
   const [col3, setCol3] = useState("grey");
-  const [showCol1Picker, setShowCol1Picker] = useState(false);
-  const [showCol2Picker, setShowCol2Picker] = useState(false);
-  const [showCol3Picker, setShowCol3Picker] = useState(false);
+  const [showCol1Picker, setShowCol1Picker] = useState(true);
+  const [showCol2Picker, setShowCol2Picker] = useState(true);
+  const [showCol3Picker, setShowCol3Picker] = useState(true);
 
   // FLAG STYLES SETUP
   const flagStyles = [
