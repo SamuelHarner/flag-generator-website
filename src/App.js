@@ -111,7 +111,7 @@ function App() {
               setShowCol1Picker((showCol1Picker) => showCol1Picker)
             }
           >
-            {showCol1Picker ? "Close color 1" : "Color 1: "}
+            {showCol1Picker ? "Color 1: " : "Color 1: "}
           </button>
           {showCol1Picker && (
             <ChromePicker
@@ -132,7 +132,8 @@ function App() {
               setShowCol2Picker((showCol2Picker) => showCol2Picker)
             }
           >
-            {showCol2Picker ? "Close color 2" : "Color 2: "}
+            {/* When toggling enabled: "Close color 2 " : "Color 2: "  */}
+            {showCol2Picker ? "Color 2: " : "Color 2: "}
           </button>
           {showCol2Picker && (
             <ChromePicker
@@ -152,7 +153,7 @@ function App() {
               setShowCol3Picker((showCol3Picker) => showCol3Picker)
             }
           >
-            {showCol3Picker ? "Close color 3" : "Color 3: "}
+            {showCol3Picker ? "Color 3: " : "Color 3: "}
           </button>
           {showCol3Picker && (
             <ChromePicker
