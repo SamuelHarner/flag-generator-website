@@ -1,7 +1,7 @@
 import "./App.css";
 import { FLAG } from "./constants";
 import React, { useState, useRef } from "react";
-import { ChromePicker } from "react-color";
+import { HexColorPicker, HexColorInput } from "react-colorful";
 import { Stage, Layer, Rect } from "react-konva";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
@@ -12,9 +12,6 @@ function App() {
   const [col1, setCol1] = useState("black");
   const [col2, setCol2] = useState("white");
   const [col3, setCol3] = useState("grey");
-  const [showCol1Picker, setShowCol1Picker] = useState(true);
-  const [showCol2Picker, setShowCol2Picker] = useState(true);
-  const [showCol3Picker, setShowCol3Picker] = useState(true);
 
   // FLAG STYLES SETUP
   const flagStyles = [
@@ -106,64 +103,26 @@ function App() {
 
         {/* Color picker 1 */}
         <div className="ColorSelector">
-          <button
-            onClick={() =>
-              setShowCol1Picker((showCol1Picker) => showCol1Picker)
-            }
-          >
-            {showCol1Picker ? "Color 1: " : "Color 1: "}
-          </button>
-          {showCol1Picker && (
-            <ChromePicker
-              color={col1}
-              onChange={(col1) => {
-                setCol1(col1.hex);
-              }}
-            />
-          )}
-          <div style={styles.swatch1} />
+          <section className="small">
+            <HexColorPicker color={col1} onChange={setCol1} />
+            <HexColorInput color={col1} onChange={setCol1} />
+          </section>
         </div>
 
         {/* Color picker 2 */}
         <div className="ColorSelector">
-          <button
-            onClick={() =>
-              /* Can enable toggling with: => !showCol2Picker  */
-              setShowCol2Picker((showCol2Picker) => showCol2Picker)
-            }
-          >
-            {/* When toggling enabled: "Close color 2 " : "Color 2: "  */}
-            {showCol2Picker ? "Color 2: " : "Color 2: "}
-          </button>
-          {showCol2Picker && (
-            <ChromePicker
-              color={col2}
-              onChange={(col2) => {
-                setCol2(col2.hex);
-              }}
-            />
-          )}
-          <div style={styles.swatch2} />
+          <section className="small">
+            <HexColorPicker color={col2} onChange={setCol2} />
+            <HexColorInput color={col2} onChange={setCol2} />
+          </section>
         </div>
 
         {/* Color picker 3 */}
         <div className="ColorSelector">
-          <button
-            onClick={() =>
-              setShowCol3Picker((showCol3Picker) => showCol3Picker)
-            }
-          >
-            {showCol3Picker ? "Color 3: " : "Color 3: "}
-          </button>
-          {showCol3Picker && (
-            <ChromePicker
-              color={col3}
-              onChange={(col3) => {
-                setCol3(col3.hex);
-              }}
-            />
-          )}
-          <div style={styles.swatch3} />
+          <section className="small">
+            <HexColorPicker color={col3} onChange={setCol3} />
+            <HexColorInput color={col3} onChange={setCol3} />
+          </section>
         </div>
 
         {/* Download flag button */}
