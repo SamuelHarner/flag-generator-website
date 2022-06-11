@@ -12,6 +12,11 @@
   margin-left: 15px;
 }
 
+.small .react-colorful {
+  width: 150px;
+  height: 120px;
+}
+
 .FlagOptions {
   display: flex;
   flex-direction: row;
@@ -23,4 +28,8 @@
 
 h1 {
   margin-top: 5px;
+}
+
+p {
+  font-size: small;
 }
