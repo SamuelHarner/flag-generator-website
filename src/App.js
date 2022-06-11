@@ -55,29 +55,7 @@ function App() {
   const changeFlagStyle = (option) => setFlagStyle(option.value);
 
   // LOCAL CSS STYLES
-  const styles = {
-    swatch1: {
-      width: 35,
-      height: 35,
-      background: col1,
-      border: `1px solid black`,
-      marginLeft: 5,
-    },
-    swatch2: {
-      width: 35,
-      height: 35,
-      background: col2,
-      border: `1px solid black`,
-      marginLeft: 5,
-    },
-    swatch3: {
-      width: 35,
-      height: 35,
-      background: col3,
-      border: `1px solid black`,
-      marginLeft: 5,
-    },
-  };
+  // const styles = {};
 
   // DOWNLOAD BUTTON EXPORT SETUP
   const layerRef = useRef(null);
