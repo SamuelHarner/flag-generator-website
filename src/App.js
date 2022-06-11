@@ -108,7 +108,7 @@ function App() {
         <div className="ColorSelector">
           <button
             onClick={() =>
-              setShowCol1Picker((showCol1Picker) => !showCol1Picker)
+              setShowCol1Picker((showCol1Picker) => showCol1Picker)
             }
           >
             {showCol1Picker ? "Close color 1" : "Color 1: "}
@@ -128,7 +128,8 @@ function App() {
         <div className="ColorSelector">
           <button
             onClick={() =>
-              setShowCol2Picker((showCol2Picker) => !showCol2Picker)
+              /* Can enable toggling with: => !showCol2Picker  */
+              setShowCol2Picker((showCol2Picker) => showCol2Picker)
             }
           >
             {showCol2Picker ? "Close color 2" : "Color 2: "}
@@ -148,7 +149,7 @@ function App() {
         <div className="ColorSelector">
           <button
             onClick={() =>
-              setShowCol3Picker((showCol3Picker) => !showCol3Picker)
+              setShowCol3Picker((showCol3Picker) => showCol3Picker)
             }
           >
             {showCol3Picker ? "Close color 3" : "Color 3: "}
