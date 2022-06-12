@@ -72,7 +72,6 @@ function App() {
       <div className="FlagOptions">
         {/* Flag style dropdown menu */}
         <Dropdown
-          style={{ width: "150%" }}
           options={flagStyles}
           value={defaultFlagStyle}
           onChange={changeFlagStyle}
