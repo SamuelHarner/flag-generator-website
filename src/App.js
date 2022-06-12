@@ -1,4 +1,5 @@
 import "./App.css";
+import { FLAG } from "./constants";
 import React, { useState, useRef } from "react";
 import { HexColorPicker, HexColorInput } from "react-colorful";
 import { Stage, Layer } from "react-konva";
@@ -8,9 +9,9 @@ import { Flag } from "./Flag";
 
 function App() {
   // COLORS SETUP
-  const [col1, setCol1] = useState("black");
-  const [col2, setCol2] = useState("white");
-  const [col3, setCol3] = useState("grey");
+  const [col1, setCol1] = useState("#000000");
+  const [col2, setCol2] = useState("#ffffff");
+  const [col3, setCol3] = useState("#808080");
 
   // FLAG STYLES SETUP
   const flagStyles = [
@@ -110,15 +111,15 @@ function App() {
 
       {/* FLAG */}
       <div className="Flag">
-        <Stage width={window.innerWidth / 2} height={window.innerHeight / 2}>
+        <Stage width={FLAG.WIDTH} height={FLAG.HEIGHT}>
           <Layer ref={layerRef}>
             <Flag
               flagStyle={flagStyle}
               col1={col1}
               col2={col2}
               col3={col3}
-              flagWidth={window.innerWidth / 2}
-              flagHeight={window.innerHeight / 2}
+              flagWidth={FLAG.WIDTH}
+              flagHeight={FLAG.HEIGHT}
             />
           </Layer>
         </Stage>
