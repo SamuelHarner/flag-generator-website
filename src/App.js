@@ -1,8 +1,7 @@
 import "./App.css";
-import { FLAG } from "./constants";
 import React, { useState, useRef } from "react";
 import { HexColorPicker, HexColorInput } from "react-colorful";
-import { Stage, Layer, Rect } from "react-konva";
+import { Stage, Layer } from "react-konva";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import { Flag } from "./Flag";
@@ -73,6 +72,7 @@ function App() {
       <div className="FlagOptions">
         {/* Flag style dropdown menu */}
         <Dropdown
+          style={{ width: "150%" }}
           options={flagStyles}
           value={defaultFlagStyle}
           onChange={changeFlagStyle}
@@ -110,19 +110,17 @@ function App() {
       </div>
 
       {/* FLAG */}
-      <div>
-        <Stage width={window.innerWidth} height={window.innerHeight}>
-          <Layer>
-            <Rect
-              x={FLAG.START_X - 1}
-              y={FLAG.START_Y - 1}
-              width={FLAG.WIDTH + 2}
-              height={FLAG.HEIGHT + 2}
-              fill="black"
-            />
-          </Layer>
+      <div className="Flag">
+        <Stage width={window.innerWidth / 2} height={window.innerHeight / 2}>
           <Layer ref={layerRef}>
-            <Flag flagStyle={flagStyle} col1={col1} col2={col2} col3={col3} />
+            <Flag
+              flagStyle={flagStyle}
+              col1={col1}
+              col2={col2}
+              col3={col3}
+              flagWidth={window.innerWidth / 2}
+              flagHeight={window.innerHeight / 2}
+            />
           </Layer>
         </Stage>
       </div>
