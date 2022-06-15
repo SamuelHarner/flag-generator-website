@@ -6,6 +6,10 @@
   margin-top: 30px;
 }
 
+.Dropdown {
+  width: 250px
+}
+
 .ColorSelector {
   display: flex;
   flex-direction: row;

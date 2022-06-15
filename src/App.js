@@ -72,12 +72,14 @@ function App() {
 
       <div className="FlagOptions">
         {/* Flag style dropdown menu */}
-        <Dropdown
-          options={flagStyles}
-          value={defaultFlagStyle}
-          onChange={changeFlagStyle}
-          placeholder="Select a flag style"
-        />
+        <div className="Dropdown">
+          <Dropdown
+            options={flagStyles}
+            value={defaultFlagStyle}
+            onChange={changeFlagStyle}
+            placeholder="Select a flag style"
+          />
+        </div>
 
         {/* Color picker 1 */}
         <div className="ColorSelector">
