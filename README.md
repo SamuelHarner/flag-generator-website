@@ -1,4 +1,7 @@
-This repo contains code for the website at: [flaggenerator.com](https://www.flaggenerator.com/)
+# Flag Generator website
+This is a small project I did to learn some of the basics of building websites.
+
+The website can be accessed at: [flaggenerator.com](https://www.flaggenerator.com/)
 
 # Getting Started with Create React App
 
