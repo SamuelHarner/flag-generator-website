@@ -24,10 +24,17 @@
 .FlagOptions {
   display: flex;
   flex-direction: row;
+  margin-right: 150px;
 }
 
 .DlFlagButton {
   margin-left: 15px;
+}
+
+.Centered {
+  display: 'flex';
+  align-items: 'center';
+  justify-content: center;
 }
 
 .Flag {

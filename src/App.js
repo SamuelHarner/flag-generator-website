@@ -112,19 +112,21 @@ function App() {
       </div>
 
       {/* FLAG */}
-      <div className="Flag">
-        <Stage width={FLAG.WIDTH} height={FLAG.HEIGHT}>
-          <Layer ref={layerRef}>
-            <Flag
-              flagStyle={flagStyle}
-              col1={col1}
-              col2={col2}
-              col3={col3}
-              flagWidth={FLAG.WIDTH}
-              flagHeight={FLAG.HEIGHT}
-            />
-          </Layer>
-        </Stage>
+      <div classname="Centered">
+        <div className="Flag">
+          <Stage width={FLAG.WIDTH} height={FLAG.HEIGHT}>
+            <Layer ref={layerRef}>
+              <Flag
+                flagStyle={flagStyle}
+                col1={col1}
+                col2={col2}
+                col3={col3}
+                flagWidth={FLAG.WIDTH}
+                flagHeight={FLAG.HEIGHT}
+              />
+            </Layer>
+          </Stage>
+        </div>
       </div>
       {/* OUTERMOST DIV */}
     </div>
