@@ -24,7 +24,8 @@
 .FlagOptions {
   display: flex;
   flex-direction: row;
-  margin-right: 11%;
+  align-items: 'center';
+  justify-content: center;
 }
 
 .DlFlagButton {
