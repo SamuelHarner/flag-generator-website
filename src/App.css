@@ -28,6 +28,10 @@
   justify-content: center;
 }
 
+.RandomColorsButton {
+  margin-left: 15px;
+}
+
 .RandomFlagButton {
   margin-left: 15px;
 }

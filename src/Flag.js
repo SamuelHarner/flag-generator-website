@@ -946,6 +946,63 @@ export function Flag({ flagStyle, col1, col2, col3, flagWidth, flagHeight }) {
         </>
       );
 
+    case "panama":
+      return (
+        <>
+          {/* Top-left rectangle with a star */}
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={flagWidth / 2}
+            height={flagHeight / 2}
+            fill={col1}
+          />
+          <Star
+            x={FLAG.START_X + flagWidth / 4}
+            y={FLAG.START_Y + flagHeight / 4}
+            numPoints={5}
+            innerRadius={flagWidth / 30}
+            outerRadius={(2.618 * flagWidth) / 30}
+            fill={col2}
+          />
+
+          {/* Top-right rectangle */}
+          <Rect
+            x={FLAG.START_X + flagWidth / 2}
+            y={FLAG.START_Y}
+            width={flagWidth / 2}
+            height={flagHeight / 2}
+            fill={col3}
+          />
+
+          {/* Bottom-left rectangle */}
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + flagHeight / 2}
+            width={flagWidth / 2}
+            height={flagHeight / 2}
+            fill={col2}
+          />
+
+          {/* Bottom-right rectangle with a star */}
+          <Rect
+            x={FLAG.START_X + flagWidth / 2}
+            y={FLAG.START_Y + flagHeight / 2}
+            width={flagWidth / 2}
+            height={flagHeight / 2}
+            fill={col1}
+          />
+          <Star
+            x={FLAG.START_X + 3 * (flagWidth / 4)}
+            y={FLAG.START_Y + (3 * flagHeight) / 4}
+            numPoints={5}
+            innerRadius={flagWidth / 30}
+            outerRadius={(2.618 * flagWidth) / 30}
+            fill={col3}
+          />
+        </>
+      );
+
     case "monocolor":
       return (
         <>

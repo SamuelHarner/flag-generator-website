@@ -46,6 +46,7 @@ function App() {
     { value: "centered_star", label: "Centered star" },
     { value: "centered_hollow_star", label: "Centered hollow star" },
     { value: "cornered_star", label: "Cornered star" },
+    { value: "panama", label: "Panama" },
     { value: "monocolor", label: "Monocolor" },
   ];
 
@@ -75,12 +76,14 @@ function App() {
     return color;
   }
 
-  const randomFlag = () => {
+  const randomColors = () => {
     // Set three random colors
     setCol1(randomHexColor());
     setCol2(randomHexColor());
     setCol3(randomHexColor());
+  };
 
+  const randomFlag = () => {
     // Select a random flag style from the available options
     const randomIndex = Math.floor(Math.random() * flagStyles.length);
     const randomStyle = flagStyles[randomIndex];
@@ -126,6 +129,11 @@ function App() {
             <HexColorInput color={col3} onChange={setCol3} />
           </section>
         </div>
+
+        {/* Random colors button */}
+        <button className="RandomColorsButton" onClick={randomColors}>
+          Random colors
+        </button>
 
         {/* Random flag button */}
         <button className="RandomFlagButton" onClick={randomFlag}>
