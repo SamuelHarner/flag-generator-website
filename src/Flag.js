@@ -1,6 +1,6 @@
 /* Functions for creating flags */
 import { FLAG } from "./constants";
-import { Circle, Rect, Line, Star } from "react-konva";
+import { Circle, Rect, Line, Star, Arc } from "react-konva";
 
 export function Flag({ flagStyle, col1, col2, col3, flagWidth, flagHeight }) {
   switch (flagStyle) {
@@ -613,6 +613,53 @@ export function Flag({ flagStyle, col1, col2, col3, flagWidth, flagHeight }) {
         </>
       );
 
+    case "greece":
+      const cantonWidth = flagWidth / 2.5;
+      const cantonHeight = (5 * flagHeight) / 9;
+
+      return (
+        <>
+          {/* Stripes */}
+          {[...Array(9)].map((_, i) => (
+            <Rect
+              key={i}
+              x={FLAG.START_X}
+              y={FLAG.START_Y + (i * flagHeight) / 9}
+              width={flagWidth}
+              height={flagHeight / 9}
+              fill={i % 2 === 0 ? col1 : col2}
+            />
+          ))}
+
+          {/* Canton with background color */}
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={cantonWidth}
+            height={cantonHeight}
+            fill={col1}
+          />
+
+          {/* Cross in the canton */}
+          {/* Vertical part of the cross */}
+          <Rect
+            x={FLAG.START_X + cantonWidth / 2 - flagHeight / 9 / 2}
+            y={FLAG.START_Y}
+            width={flagHeight / 9}
+            height={cantonHeight}
+            fill={col2}
+          />
+          {/* Horizontal part of the cross */}
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + (2 * flagHeight) / 9}
+            width={cantonWidth}
+            height={flagHeight / 9}
+            fill={col2}
+          />
+        </>
+      );
+
     case "thai":
       return (
         <>
@@ -647,6 +694,76 @@ export function Flag({ flagStyle, col1, col2, col3, flagWidth, flagHeight }) {
         </>
       );
 
+    case "botswana":
+      const centralStripeHeight = (2 * flagHeight) / 9;
+      const framingStripeHeight = flagHeight / 18;
+
+      return (
+        <>
+          {/* Top part of the flag */}
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={flagWidth}
+            height={
+              (flagHeight - centralStripeHeight - 2 * framingStripeHeight) / 2
+            }
+            fill={col1}
+          />
+          {/* First framing stripe */}
+          <Rect
+            x={FLAG.START_X}
+            y={
+              FLAG.START_Y +
+              (flagHeight - centralStripeHeight - 2 * framingStripeHeight) / 2
+            }
+            width={flagWidth}
+            height={framingStripeHeight}
+            fill={col3}
+          />
+          {/* Central stripe */}
+          <Rect
+            x={FLAG.START_X}
+            y={
+              FLAG.START_Y +
+              (flagHeight - centralStripeHeight - 2 * framingStripeHeight) / 2 +
+              framingStripeHeight
+            }
+            width={flagWidth}
+            height={centralStripeHeight}
+            fill={col2}
+          />
+          {/* Second framing stripe */}
+          <Rect
+            x={FLAG.START_X}
+            y={
+              FLAG.START_Y +
+              (flagHeight - centralStripeHeight - 2 * framingStripeHeight) / 2 +
+              framingStripeHeight +
+              centralStripeHeight
+            }
+            width={flagWidth}
+            height={framingStripeHeight}
+            fill={col3}
+          />
+          {/* Bottom part of the flag */}
+          <Rect
+            x={FLAG.START_X}
+            y={
+              FLAG.START_Y +
+              (flagHeight - centralStripeHeight - 2 * framingStripeHeight) / 2 +
+              2 * framingStripeHeight +
+              centralStripeHeight
+            }
+            width={flagWidth}
+            height={
+              (flagHeight - centralStripeHeight - 2 * framingStripeHeight) / 2
+            }
+            fill={col1}
+          />
+        </>
+      );
+
     case "czech":
       return (
         <>
@@ -676,6 +793,57 @@ export function Flag({ flagStyle, col1, col2, col3, flagWidth, flagHeight }) {
             ]}
             closed
             fill={col1}
+          />
+        </>
+      );
+
+    case "trinidad_and_tobago":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={flagWidth}
+            height={flagHeight}
+            fill={col1}
+          />
+          {/* Wide stripe */}
+          <Line
+            points={[
+              FLAG.START_X,
+              FLAG.START_Y,
+              FLAG.START_X + flagWidth / 3,
+              FLAG.START_Y,
+              FLAG.START_X + flagWidth / 3,
+              FLAG.START_Y,
+              FLAG.START_X + flagWidth,
+              FLAG.START_Y + flagHeight,
+              FLAG.START_X + flagWidth,
+              FLAG.START_Y + flagHeight,
+              FLAG.START_X + (2 * flagWidth) / 3,
+              FLAG.START_Y + flagHeight,
+            ]}
+            closed
+            fill={col2}
+          />
+          {/* Thin stripe */}
+          <Line
+            points={[
+              FLAG.START_X + flagWidth / 16,
+              FLAG.START_Y,
+              FLAG.START_X + flagWidth / 3 - flagWidth / 16,
+              FLAG.START_Y,
+              FLAG.START_X + flagWidth / 3 - flagWidth / 16,
+              FLAG.START_Y,
+              FLAG.START_X + flagWidth - flagWidth / 16,
+              FLAG.START_Y + flagHeight,
+              FLAG.START_X + (2 * flagWidth) / 3 + flagWidth / 16,
+              FLAG.START_Y + flagHeight,
+              FLAG.START_X + (2 * flagWidth) / 3 + flagWidth / 16,
+              FLAG.START_Y + flagHeight,
+            ]}
+            closed
+            fill={col3}
           />
         </>
       );
@@ -775,6 +943,41 @@ export function Flag({ flagStyle, col1, col2, col3, flagWidth, flagHeight }) {
             width={(3 * flagHeight) / 5}
             height={flagHeight / 5}
             fill={col2}
+          />
+        </>
+      );
+
+    case "greenland":
+      return (
+        <>
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y}
+            width={flagWidth}
+            height={flagHeight / 2}
+            fill={col1}
+          />
+          <Circle
+            x={FLAG.START_X + flagWidth / 2}
+            y={FLAG.START_Y + flagHeight / 2}
+            radius={flagWidth / 6}
+            fill={col2}
+          />
+          <Rect
+            x={FLAG.START_X}
+            y={FLAG.START_Y + flagHeight / 2}
+            width={flagWidth}
+            height={flagHeight / 2}
+            fill={col2}
+          />
+          <Arc
+            x={FLAG.START_X + flagWidth / 2}
+            y={FLAG.START_Y + flagHeight / 2}
+            innerRadius={0}
+            outerRadius={flagWidth / 6}
+            angle={180}
+            fill={col1}
+            rotation={0}
           />
         </>
       );
