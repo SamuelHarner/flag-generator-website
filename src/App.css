@@ -28,6 +28,10 @@
   justify-content: center;
 }
 
+.RandomFlagButton {
+  margin-left: 15px;
+}
+
 .DlFlagButton {
   margin-left: 15px;
 }

@@ -65,6 +65,28 @@ function App() {
     downloadURI(uri, "flag.png");
   };
 
+  // RANDOM FLAG BUTTON SETUP
+  function randomHexColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  const randomFlag = () => {
+    // Set three random colors
+    setCol1(randomHexColor());
+    setCol2(randomHexColor());
+    setCol3(randomHexColor());
+
+    // Select a random flag style from the available options
+    const randomIndex = Math.floor(Math.random() * flagStyles.length);
+    const randomStyle = flagStyles[randomIndex];
+    setFlagStyle(randomStyle.value);
+  };
+
   // APP RETURN
   return (
     <div className="App">
@@ -75,7 +97,7 @@ function App() {
         <div className="Dropdown">
           <Dropdown
             options={flagStyles}
-            value={defaultFlagStyle}
+            value={flagStyle}
             onChange={changeFlagStyle}
             placeholder="Select a flag style"
           />
@@ -104,6 +126,11 @@ function App() {
             <HexColorInput color={col3} onChange={setCol3} />
           </section>
         </div>
+
+        {/* Random flag button */}
+        <button className="RandomFlagButton" onClick={randomFlag}>
+          Random flag
+        </button>
 
         {/* Download flag button */}
         <button className="DlFlagButton" onClick={handleExport}>
