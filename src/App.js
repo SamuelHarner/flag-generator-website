@@ -70,7 +70,7 @@ function App() {
     downloadURI(uri, "flag.png");
   };
 
-  // RANDOM FLAG BUTTON SETUP
+  // RANDOM BUTTONS SETUP
   function randomHexColor() {
     var letters = "0123456789ABCDEF";
     var color = "#";
@@ -87,7 +87,7 @@ function App() {
     setCol3(randomHexColor());
   };
 
-  const randomFlag = () => {
+  const randomStyle = () => {
     // Select a random flag style from the available options
     const randomIndex = Math.floor(Math.random() * flagStyles.length);
     const randomStyle = flagStyles[randomIndex];
@@ -139,9 +139,9 @@ function App() {
           Random colors
         </button>
 
-        {/* Random flag button */}
-        <button className="RandomFlagButton" onClick={randomFlag}>
-          Random flag
+        {/* Random style button */}
+        <button className="RandomStyleButton" onClick={randomStyle}>
+          Random style
         </button>
 
         {/* Download flag button */}
